@@ -52,6 +52,26 @@ div{
 	padding-bottom: 10rem!important;
 }
 
+.contact{
+	height: fit-content;
+}
+
+.icon-contact{
+	font-size: x-large;
+	vertical-align:bottom;
+	font-size: bold;
+}
+
+.mapx{
+	height: 500px;
+	width: 100%;
+}
+
+iframe {
+	max-height: 100%!important;
+}
+
+
 .img-mrg{
 	overflow: hidden;
 	display: inline-block;
@@ -113,6 +133,7 @@ p{
 	border-radius: 0px;
 	font-weight: 600;
 	transition: .5s;
+	padding: 20px;
 }
 
 .btn:hover{
@@ -121,7 +142,7 @@ p{
 }
 
 .footer-logo{
-	height: 300px;
+	height: 280px;
 }
 
 .align-items-center {
@@ -176,14 +197,14 @@ p{
 	border: none;
 	border-radius: 100%;
 	box-shadow: 0 2px 4px 0 rgba(0,0,0,.5);
-
-
+	padding: 10px!important;
 }
 
 #topBtn:hover {
 	background-color: #021a35;
 	transform: translateY(-10px);
 }
+
 
 .icon-size{
 	vertical-align:bottom;
@@ -239,19 +260,6 @@ option{
 	color: white!important;
 }
 
-.map-container{
-	overflow:hidden;
-	position:relative;
-	height: 0;
-}
-
-.map-container iframe{
-	left:0;
-	top:0;
-	height:100%;
-	width:100%;
-	position:absolute;
-}
 
 .contact-btn{
 	background-color: #f2f2f2;
@@ -276,25 +284,29 @@ option{
 }
 
 .clientes-logo{
-	width: 160px;
+	width: 180px;
 	transition: .5s;
-	filter: brightness(10.0);
+	filter: brightness(0) invert(1);
 }
 
 .clientes-logo:hover{
-	transform: translateY(-15px);
+	transform: translateY(-5px);
 }
 
 .clientes-logo2{
 	height: 100px;
 	transition: .5s;
-	filter: brightness(10.0);
+	filter: brightness(0) invert(1);
 }
 
 .clientes-logo2:hover{
-	transform: translateY(-15px);
+	transform: translateY(-5px);
 }
 
+
+.iconx{
+	width: 75px;
+}
 
 @media only screen and (max-width: 760px){
 
