@@ -23,7 +23,7 @@ div{
 	color:#FFFFFF;
 	font-weight: 600;
 	font-size: 14px;
-	transition: .5s;
+	transition: .5s!important;
 	letter-spacing: 2px;
 }
 
@@ -48,8 +48,6 @@ div{
 
 .join{
 	height: fit-content;
-	padding-top: 10rem!important;
-	padding-bottom: 10rem!important;
 }
 
 .contact{
@@ -106,15 +104,22 @@ b{
 }
 
 .footer{
-	color: white;
+	color: #FFFFFF;
 	background-color: #03254C;
 	height: fit-content;
 	font-size: small;
-	font-weight: 300;
+	font-weight: 400;
 	background-attachment: fixed;
 	background-position: center;
 }
 
+.material-symbols-rounded {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
 
 h1{
 	color: #03254C;
@@ -124,6 +129,10 @@ h1{
 
 p{
 	font-size: 1.2em;
+}
+
+.blue p{
+	color: #FFFFFF;
 }
 
 .btn{
@@ -139,6 +148,23 @@ p{
 .btn:hover{
 	background-color: #021a35;
 	transform: translateY(-2px);
+}
+
+.btn2{
+	background-color: #021a35;
+	border: none;
+	font-size: 1.2em;
+	border-radius: 0px;
+	font-weight: 600;
+	transition: .5s;
+	padding: 20px;
+	cursor: pointer;
+}
+
+.btn2:hover{
+	background-color: #F2F2F2;
+	transform: translateY(-2px);
+	color: #03254C;
 }
 
 .footer-logo{
@@ -189,11 +215,12 @@ p{
 	z-index: 90; /* Make sure it does not overlap */
 	outline: none; /* Remove outline */
 	background-color: #03254C; /* Set a background color */
-	color: white; /* Text color */
+	color: #FFFFFF; /* Text color */
 	cursor: pointer; /* Add a mouse pointer on hover */
 	font-weight: bolder;
+	border: solid;
+	border-width: 5px;
 	transition: 0.5s ease;
-	border: none;
 	border-radius: 100%;
 	box-shadow: 0 2px 4px 0 rgba(0,0,0,.5);
 	padding: 10px!important;
@@ -202,12 +229,6 @@ p{
 #topBtn:hover {
 	background-color: #021a35;
 	transform: translateY(-10px);
-}
-
-
-.icon-size{
-	vertical-align:bottom;
-	font-size: 22px;
 }
 
 .centering{
@@ -220,56 +241,6 @@ p{
 
 .img-footer{
 	width: 150px;
-}
-
-.form-control{
-	background-color: transparent;
-	border-top: none;
-	border-left: none;
-	border-right: none;
-	border-radius: 0;
-	color: #f2f2f2;
-	border-color: #f2f2f2;
-	border-width: 2px;
-	font-size: medium;
-}
-
-.form-control:focus, .form-control:active{
-	background-color: transparent;
-	outline: none !important;
-	box-shadow: none;
-	color: whitesmoke;
-}
-
-option{
-	background-color: #1a1a1a;
-}
-
-.form-border{
-	border: solid!important;
-	border-color: black;
-	border-width: 2px!important;
-}
-
-.form-control:focus, .form-control:active{
-	border-color: white;
-}
-
-::placeholder{
-	color: white!important;
-}
-
-
-.contact-btn{
-	background-color: #f2f2f2;
-	font-size: small;
-	font-weight: ;
-	border-radius: 0px;
-}
-
-.contact-btn:hover{
-	background-color: gray;
-	color: white;
 }
 
 .navbar-toggler{
@@ -304,7 +275,12 @@ option{
 
 
 .iconx{
-	width: 75px;
+	width: 60px;
+}
+
+.footer p{
+	font-size: X-small;
+	font-weight: 400;
 }
 
 @media only screen and (max-width: 760px){
@@ -325,6 +301,10 @@ option{
 		font-size: medium;
 	}
 
+	.btn2{
+		font-size: medium;
+	}
+
 	.blue{
 		padding-left: 0rem!important;
 		padding-right: 0rem!important;
@@ -341,6 +321,10 @@ option{
 
 	.clientes-logo2{
 		height: 80px;
+	}
+
+	.service-img{
+		display: none;
 	}
 
 
@@ -364,5 +348,5 @@ option{
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-	background: #03254C;
+	background: #021a35;
 }
