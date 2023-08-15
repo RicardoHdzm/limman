@@ -288,14 +288,14 @@ option{
 	filter: brightness(0) invert(1);
 }
 
-.clientes-logo:hover{
-	transform: translateY(-5px);
-}
-
 .clientes-logo2{
 	height: 100px;
 	transition: .5s;
 	filter: brightness(0) invert(1);
+}
+
+.clientes-logo:hover{
+	transform: translateY(-5px);
 }
 
 .clientes-logo2:hover{
@@ -334,6 +334,15 @@ option{
 	.logo-home{
 		width: 100%;
 	}
+
+	.clientes-logo{
+		width: 147px;
+	}
+
+	.clientes-logo2{
+		height: 80px;
+	}
+
 
 }
 
