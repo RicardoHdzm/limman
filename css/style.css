@@ -127,10 +127,6 @@ video {
 	color: #FFFFFF;
 }
 
-b{
-	color: #03254C;
-}
-
 .footer{
 	color: #FFFFFF;
 	background-color: #03254C;
@@ -194,10 +190,6 @@ p{
 	background-color: #F2F2F2;
 	transform: translateY(-2px);
 	color: #03254C;
-}
-
-.footer-logo{
-	height: 280px;
 }
 
 .align-items-center {
@@ -269,7 +261,7 @@ p{
 }
 
 .img-footer{
-	width: 150px;
+	height: 150px;
 }
 
 .navbar-toggler{
@@ -308,8 +300,18 @@ p{
 }
 
 .footer p{
-	font-size: X-small;
+	font-size: small;
 	font-weight: 400;
+}
+
+.footer a{
+	text-decoration: none;
+	color: #FFFFFF!important;
+}
+
+.icon-size{
+  vertical-align:bottom;
+  font-size: 22px;
 }
 
 @media only screen and (max-width: 760px){
