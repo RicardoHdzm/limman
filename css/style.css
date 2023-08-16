@@ -75,6 +75,14 @@ iframe {
 	display: inline-block;
 }
 
+.about img{
+	pointer-events: none;
+}
+
+.gallery img{
+	pointer-events: none!important;
+}
+
 .service-img{
 	width: 100%;
 	position: center;
@@ -115,6 +123,7 @@ video {
 	align-items: center;
 	justify-content: center;
 	background-color: black;
+	pointer-events: none;
 }
 
 .limman h1{
