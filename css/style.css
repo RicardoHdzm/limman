@@ -28,6 +28,8 @@ div{
 }
 
 .navbar-nav>a:hover{
+	text-decoration: underline 2px;
+	text-underline-offset: 8px;
 	transform: translateY(-2px);
 }
 
@@ -321,8 +323,8 @@ p{
 }
 
 .icon-size{
-  vertical-align:bottom;
-  font-size: 22px;
+	vertical-align:bottom;
+	font-size: 22px;
 }
 
 @media only screen and (max-width: 760px){
