@@ -489,7 +489,7 @@ p{ font-size: 1.05em; line-height: 1.7; color: var(--gray); margin: 0 0 1rem; }
 	height: 76px;
 	background: #25D366;
 }
-.fab-whatsapp img{ width: 42px; }
+.fab-whatsapp .whatsapp-icon{ width: 38px; height: 38px; color: #fff; }
 .fab-whatsapp:hover{ transform: translateY(-4px); }
 
 /* ---------- Scroll reveal ---------- */
@@ -545,7 +545,7 @@ p{ font-size: 1.05em; line-height: 1.7; color: var(--gray); margin: 0 0 1rem; }
 	.clients-grid{ grid-template-columns: repeat(2, 1fr); }
 	.fab{ right: 18px; }
 	.fab-whatsapp{ bottom: 18px; width: 64px; height: 64px; }
-	.fab-whatsapp img{ width: 36px; }
+	.fab-whatsapp .whatsapp-icon{ width: 32px; height: 32px; }
 
 	.footer-main{ flex-direction: column; text-align: center; }
 	.footer-nav, .footer-contact{ justify-content: center; }
