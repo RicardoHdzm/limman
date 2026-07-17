@@ -1,14 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-	// Mobile nav toggle
+	const navbar = document.getElementById('navbar');
 	const navToggle = document.getElementById('navToggle');
 	const navLinks = document.getElementById('navLinks');
 
+	// Navbar transparency until first scroll (or while the mobile menu is open)
+	const updateNavbar = () => {
+		if (!navbar) return;
+		const menuOpen = navLinks ? navLinks.classList.contains('open') : false;
+		navbar.classList.toggle('scrolled', window.scrollY > 10 || menuOpen);
+	};
+	updateNavbar();
+	window.addEventListener('scroll', updateNavbar);
+
+	// Mobile nav toggle
 	if (navToggle && navLinks) {
 		navToggle.addEventListener('click', () => {
 			const isOpen = navLinks.classList.toggle('open');
 			navToggle.classList.toggle('open', isOpen);
 			navToggle.setAttribute('aria-expanded', isOpen);
+			updateNavbar();
 		});
 
 		navLinks.querySelectorAll('a').forEach(link => {
@@ -16,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				navLinks.classList.remove('open');
 				navToggle.classList.remove('open');
 				navToggle.setAttribute('aria-expanded', 'false');
+				updateNavbar();
 			});
 		});
 	}
