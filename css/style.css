@@ -210,7 +210,7 @@ p{ font-size: 1.05em; line-height: 1.7; color: var(--gray); margin: 0 0 1rem; }
 	max-width: 800px;
 }
 
-.hero-logo{ max-width: 520px; width: 88vw; margin: 0 auto 1.5rem; }
+.hero-logo{ max-width: 450px; width: 88vw; margin: 0 auto 1.5rem; }
 
 .hero-tagline{
 	color: #fff;
