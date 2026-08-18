@@ -535,7 +535,7 @@ p{ font-size: 1.05em; line-height: 1.7; color: var(--gray); margin: 0 0 1rem; }
 	h2{ font-size: 1.8em; }
 }
 
-@media only screen and (max-width: 760px){
+@media only screen and (max-width: 1024px){
 
 	.navbar{
 		background: var(--navy);
