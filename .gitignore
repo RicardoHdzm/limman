@@ -1,0 +1,7 @@
+# Herramientas locales de desarrollo
+.claude/
+
+# Basura de Windows
+photothumb.db
+Thumbs.db
+desktop.ini

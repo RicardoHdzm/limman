@@ -25,7 +25,7 @@
 			<a href="#Hogar">Hogares</a>
 			<a href="#Empleo">Empleo</a>
 			<a href="#Contacto">Contacto</a>
-			<a class="nav-cta" href="https://wa.me/526671660506" target="_blank" rel="noopener">Cotizar por WhatsApp</a>
+			<a class="nav-cta" href="https://wa.me/526671660506?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n%20de%20limpieza." target="_blank" rel="noopener">Cotizar por WhatsApp</a>
 		</nav>
 
 		<button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
@@ -36,9 +36,11 @@
 	<main id="main">
 
 		<section class="hero">
-			<video playsinline autoplay muted loop>
-				<source src="img/limman.mp4" type="video/mp4">
-				</video>
+			<!-- Las fuentes se inyectan por JS: en móvil y con "reducir movimiento" solo se muestra el poster -->
+			<video playsinline autoplay muted loop preload="none"
+				poster="img/hero-poster.jpg"
+				data-video-webm="img/hero.webm"
+				data-video-mp4="img/hero.mp4"></video>
 				<div class="hero-overlay"></div>
 				<div class="hero-content">
 					<img class="hero-logo reveal" src="img/logos/limman-hero.png" alt="LIM-MAN">
@@ -89,7 +91,9 @@
 						<li><span class="material-symbols-outlined">construction</span>Limpieza post-obra y mantenimiento continuo</li>
 					</ul>
 					<p class="note">¿Tu empresa está fuera de Culiacán? Solo es cuestión de una llamada para ver qué podemos hacer por ti.</p>
-					<a href="https://wa.me/526671660506" target="_blank" rel="noopener" class="btn btn-primary">Solicita una cotización</a>
+					<div class="split-actions">
+						<a href="https://wa.me/526671660506?text=Hola%2C%20me%20interesa%20una%20cotizaci%C3%B3n%20de%20limpieza%20para%20mi%20empresa." target="_blank" rel="noopener" class="btn btn-primary">Solicita una cotización</a>
+					</div>
 				</div>
 			</section>
 
@@ -106,7 +110,9 @@
 						<li><span class="material-symbols-outlined">directions_car</span>Lavado de interiores de auto</li>
 						<li><span class="material-symbols-outlined">pets</span>Productos seguros para niños y mascotas</li>
 					</ul>
-					<a href="https://wa.me/526671660506" target="_blank" rel="noopener" class="btn btn-primary">Agenda una visita</a>
+					<div class="split-actions">
+						<a href="https://wa.me/526671660506?text=Hola%2C%20me%20interesa%20el%20servicio%20de%20limpieza%20para%20mi%20hogar." target="_blank" rel="noopener" class="btn btn-primary">Agenda una visita</a>
+					</div>
 				</div>
 			</section>
 
@@ -130,31 +136,34 @@
 						<li><span class="material-symbols-outlined">home</span>Trabaja cerca de casa</li>
 						<li><span class="material-symbols-outlined">checkroom</span>Uniforme incluido</li>
 					</ul>
-					<a href="mailto:limman71@hotmail.com?subject=Solicitud%20de%20empleo" class="btn btn-primary">Solicita información</a>
+					<div class="split-actions">
+						<a href="https://wa.me/526671660506?text=Hola%2C%20me%20interesa%20trabajar%20en%20LIM-MAN.%20%C2%BFQu%C3%A9%20vacantes%20tienen%3F" target="_blank" rel="noopener" class="btn btn-primary">Solicita información</a>
+					</div>
 				</div>
 			</section>
 
 			<section id="Contacto" class="contact">
-				<div class="section-head reveal light">
+				<div class="section-head reveal">
 					<p class="eyebrow">Hablemos</p>
 					<h2>¡Pongámonos en contacto!</h2>
 					<p>Cuéntanos qué necesitas y te respondemos a la brevedad con una cotización a tu medida.</p>
 				</div>
 				<div class="contact-grid reveal" data-delay="1">
-					<a class="contact-card" href="mailto:limman71@hotmail.com">
-						<span class="material-symbols-outlined">mail</span>
-						<h3>Envíanos un correo</h3>
-						<p>limman71@hotmail.com</p>
+					<a class="contact-card contact-card-primary" href="https://wa.me/526671660506?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios%20de%20limpieza." target="_blank" rel="noopener">
+						<span class="contact-badge">Más rápido</span>
+						<span class="material-symbols-outlined">chat</span>
+						<h3>Escríbenos por WhatsApp</h3>
+						<p>Respuesta inmediata</p>
 					</a>
 					<a class="contact-card" href="tel:+526671660506">
 						<span class="material-symbols-outlined">phone_in_talk</span>
 						<h3>Tengamos una llamada</h3>
 						<p>+52 1 667 166 0506</p>
 					</a>
-					<a class="contact-card" href="https://wa.me/526671660506" target="_blank" rel="noopener">
-						<span class="material-symbols-outlined">chat</span>
-						<h3>Escríbenos por WhatsApp</h3>
-						<p>Respuesta inmediata</p>
+					<a class="contact-card" href="mailto:limman71@hotmail.com">
+						<span class="material-symbols-outlined">mail</span>
+						<h3>Envíanos un correo</h3>
+						<p>limman71@hotmail.com</p>
 					</a>
 				</div>
 			</section>
@@ -178,7 +187,7 @@
 			</div>
 		</footer>
 
-		<a class="fab fab-whatsapp" href="https://wa.me/526671660506" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+		<a class="fab fab-whatsapp" href="https://wa.me/526671660506?text=Hola%2C%20quiero%20cotizar%20un%20servicio%20de%20limpieza." target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
 			<svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
 				<path d="M12.001 2C6.478 2 2 6.477 2 12c0 1.842.503 3.622 1.44 5.187L2 22l4.939-1.42A9.958 9.958 0 0 0 12.001 22c5.523 0 10-4.477 10-10S17.524 2 12.001 2Zm5.471 14.382c-.297.694-1.484 1.328-2.055 1.413-.531.077-1.179.109-1.891-.118a12.36 12.36 0 0 1-1.694-.625c-2.981-1.287-4.928-4.289-5.077-4.487-.148-.199-1.213-1.612-1.213-3.074 0-1.463.767-2.182 1.04-2.479.272-.298.594-.372.792-.372.198 0 .397.002.57.01.182.01.427-.069.669.51.247.595.841 2.058.916 2.207.075.149.124.322.025.52-.1.199-.149.323-.298.497-.148.173-.312.387-.446.52-.148.148-.303.309-.13.606.173.298.77 1.271 1.653 2.059 1.135 1.012 2.093 1.325 2.39 1.475.297.148.471.124.644-.075.173-.198.743-.867.94-1.164.199-.298.397-.249.67-.15.272.1 1.733.818 2.03.967.297.148.495.223.57.347.075.124.075.718-.173 1.412Z"/>
 			</svg>
