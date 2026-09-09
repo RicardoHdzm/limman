@@ -758,33 +758,122 @@ p{ font-size:var(--step-0); line-height:1.7; color:var(--ink-400); margin:0 0 1r
 .footer-main{
 	max-width:var(--maxw);
 	margin:0 auto;
-	display:flex;
-	align-items:center;
-	justify-content:space-between;
-	flex-wrap:wrap;
-	gap:2rem;
-	padding-bottom:2rem;
+	display:grid;
+	grid-template-columns:1.5fr 1fr 1.3fr 1.1fr;
+	gap:2.5rem 2rem;
+	padding-bottom:2.25rem;
 	border-bottom:1px solid rgba(255,255,255,.12);
 }
 
-.footer-brand{ line-height:0; }
+.footer-col-brand{ max-width:320px; }
+
+.footer-brand{ line-height:0; display:inline-block; }
 .footer-logo{ height:54px; }
+
+.footer-tagline{
+	color:rgba(255,255,255,.7);
+	font-size:var(--step--1);
+	line-height:1.6;
+	margin:1.1rem 0 1.25rem;
+}
+
+.footer-heading{
+	color:#fff;
+	font-size:var(--step--1);
+	font-weight:700;
+	letter-spacing:.12em;
+	text-transform:uppercase;
+	margin:0 0 1.1rem;
+}
+
+/* Redes */
+.footer-social{ display:flex; gap:.6rem; }
+.footer-social a{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	width:38px;
+	height:38px;
+	border-radius:50%;
+	background:rgba(255,255,255,.1);
+	color:rgba(255,255,255,.8);
+	transition:background-color .3s ease, color .3s ease;
+}
+.footer-social a:hover{ background:var(--accent-500); color:#fff; }
+.footer-social svg{ width:19px; height:19px; }
+
+/* Enlaces a secciones */
+.footer-links{
+	list-style:none;
+	margin:0;
+	padding:0;
+	display:flex;
+	flex-direction:column;
+	gap:.7rem;
+}
+.footer-links a{
+	color:rgba(255,255,255,.72);
+	text-decoration:none;
+	font-size:var(--step--1);
+	transition:color .3s ease;
+}
+.footer-links a:hover{ color:#fff; }
 
 .footer-contact{
 	display:flex;
-	flex-wrap:wrap;
-	gap:1.4rem;
+	flex-direction:column;
+	gap:.85rem;
 }
 .footer-contact a, .footer-address{
 	color:rgba(255,255,255,.75);
 	text-decoration:none;
 	font-size:var(--step--1);
+	line-height:1.5;
 	display:flex;
-	align-items:center;
-	gap:.4rem;
+	align-items:flex-start;
+	gap:.5rem;
 	transition:color .3s ease;
 }
 .footer-contact a:hover{ color:#fff; }
+.footer-contact .icon-size{ flex-shrink:0; }
+
+/* Horario */
+.footer-hours{
+	list-style:none;
+	margin:0;
+	padding:0;
+	display:flex;
+	flex-direction:column;
+	gap:.6rem;
+}
+.footer-hours li{
+	display:flex;
+	justify-content:space-between;
+	gap:1rem;
+	font-size:var(--step--1);
+	color:rgba(255,255,255,.75);
+}
+.footer-hours li span:last-child{ color:#fff; white-space:nowrap; }
+
+.footer-note{
+	color:rgba(255,255,255,.55);
+	font-size:.8rem;
+	font-style:italic;
+	margin:1rem 0 0;
+}
+
+/* Datos fiscales */
+.footer-legal{
+	max-width:var(--maxw);
+	margin:0 auto;
+	padding:1.25rem 0;
+	display:flex;
+	flex-wrap:wrap;
+	gap:.6rem 1.75rem;
+	font-size:.8rem;
+	color:rgba(255,255,255,.55);
+	border-bottom:1px solid rgba(255,255,255,.12);
+}
 
 .footer-bottom{
 	max-width:var(--maxw);
@@ -880,8 +969,9 @@ p{ font-size:var(--step-0); line-height:1.7; color:var(--ink-400); margin:0 0 1r
 	.fab-whatsapp{ bottom:18px; width:64px; height:64px; }
 	.fab-whatsapp .whatsapp-icon{ width:32px; height:32px; }
 
-	.footer-main{ flex-direction:column; text-align:center; }
-	.footer-contact{ justify-content:center; }
+	/* El footer pasa de 4 a 2 columnas; la de marca ocupa el ancho completo */
+	.footer-main{ grid-template-columns:1fr 1fr; }
+	.footer-col-brand{ grid-column:1 / -1; max-width:none; }
 	.footer-bottom{ justify-content:center; text-align:center; }
 }
 
@@ -907,7 +997,28 @@ p{ font-size:var(--step-0); line-height:1.7; color:var(--ink-400); margin:0 0 1r
 	.client-card{ height:104px; padding:1.2rem; }
 	.client-card img{ max-height:56px; }
 	.contact-card{ padding:2rem 1.25rem; }
-	.footer-contact{ flex-direction:column; gap:.9rem; align-items:center; }
+	/* En una sola columna todo va centrado: alineado a la izquierda deja
+	   el contenido colgando de un borde y se lee desbalanceado. */
+	.footer-main{ grid-template-columns:1fr; gap:1.75rem; text-align:center; }
+	.footer-col-brand{ grid-column:auto; max-width:none; margin-inline:auto; }
+
+	/* Apiladas y sin línea, las cuatro categorías se leen como una sola
+	   lista corrida. Mismo hilo que ya usan el resto de divisiones del footer. */
+	.footer-col + .footer-col{
+		border-top:1px solid rgba(255,255,255,.12);
+		padding-top:1.75rem;
+	}
+
+	.footer-social{ justify-content:center; }
+
+	.footer-links{ align-items:center; }
+
+	.footer-contact{ align-items:center; }
+	.footer-contact a, .footer-address{ justify-content:center; text-align:center; }
+
+	.footer-hours li{ justify-content:center; gap:.5rem; }
+
+	.footer-legal{ flex-direction:column; align-items:center; gap:.4rem; }
 }
 
 /* --- Pantallas cortas (teléfonos bajos y móvil en horizontal) ---

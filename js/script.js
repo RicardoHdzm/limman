@@ -94,6 +94,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	}
 
+	/* ---------- Año del footer ----------
+	   El HTML trae un año escrito para que el aviso salga bien aunque
+	   el JS no cargue; aquí solo se actualiza al año en curso. */
+
+	const anio = document.getElementById('anio');
+	if (anio) anio.textContent = new Date().getFullYear();
+
 	/* ---------- Animaciones de entrada ---------- */
 
 	const revealEls = document.querySelectorAll('.reveal');
