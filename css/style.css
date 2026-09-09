@@ -304,6 +304,10 @@ p{ font-size:var(--step-0); line-height:1.7; color:var(--ink-400); margin:0 0 1r
 	max-width:880px;
 }
 
+/* El h1 de la página es el logo. Sin margen propio: lo aporta la imagen.
+   El color es por si la imagen no carga y el navegador muestra el alt. */
+.hero-title{ margin:0; color:#fff; }
+
 .hero-logo{ width:100%; max-width:450px; margin:0 auto 1.5rem; }
 
 .hero-tagline{
