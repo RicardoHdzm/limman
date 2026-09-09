@@ -735,3 +735,11 @@ p{ font-size:var(--step-0); line-height:1.7; color:var(--ink-400); margin:0 0 1r
 	color: #fff;
 	text-decoration: none;
 }
+
+.hr-soft{
+  border: 0;
+  height: 1px;
+  width: 33%;
+  background-color: #ebebeb;
+  margin: 20px auto;
+}
