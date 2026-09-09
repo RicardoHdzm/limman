@@ -642,11 +642,7 @@ p{ font-size:var(--step-0); line-height:1.7; color:var(--ink-400); margin:0 0 1r
 .reveal[data-delay="2"].in-view{ transition-delay:.24s; }
 .reveal[data-delay="3"].in-view{ transition-delay:.36s; }
 
-/* ---------- Scrollbar ---------- */
-::-webkit-scrollbar{ width:10px; }
-::-webkit-scrollbar-track{ background:var(--ink-100); }
-::-webkit-scrollbar-thumb{ background:var(--ink-200); }
-::-webkit-scrollbar-thumb:hover{ background:var(--navy-800); }
+
 
 /* =========================================================
    12. Responsive — de mayor a menor, sin solapamientos
@@ -733,4 +729,9 @@ p{ font-size:var(--step-0); line-height:1.7; color:var(--ink-400); margin:0 0 1r
 	/* Sin micro-desplazamientos al pasar el cursor */
 	.btn:hover, .client-card:hover, .contact-card:hover,
 	.fab-whatsapp:hover, .brand-logo:hover{ transform:none !important; }
+}
+
+.footer-link{
+	color: #fff;
+	text-decoration: none;
 }
