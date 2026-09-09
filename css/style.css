@@ -991,6 +991,11 @@ p{ font-size:var(--step-0); line-height:1.7; color:var(--ink-400); margin:0 0 1r
 
 /* --- Móvil --- */
 @media only screen and (max-width:600px){
+	/* En móvil el logo llenaba casi todo el ancho disponible y empujaba
+	   el resto del hero hacia abajo. En pantallas bajas manda la regla
+	   de max-height, que lo deja aún más chico. */
+	.hero-logo{ max-width:270px; }
+
 	.services-grid{ grid-template-columns:1fr; gap:1rem; }
 
 	.clients-grid{ grid-template-columns:repeat(2, 1fr); gap:1rem; }
