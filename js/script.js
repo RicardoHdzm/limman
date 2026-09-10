@@ -75,9 +75,31 @@ document.addEventListener('DOMContentLoaded', () => {
 	if (navToggle && navLinks) {
 		navToggle.addEventListener('click', () => setMenu(!isMenuOpen()));
 
-		// Cierra al elegir un destino
+		/* Cierra al elegir un destino.
+		   En móvil el salto y el cierre competían: el panel tarda .4s en
+		   plegarse y el body suelta su overflow:hidden en ese mismo
+		   instante, justo cuando arranca el scroll suave. Aquí se cierra
+		   primero y se desplaza después, con el menú ya recogido. */
+		const ESPERA_CIERRE = 300;
+
 		navLinks.querySelectorAll('a').forEach(link => {
-			link.addEventListener('click', () => setMenu(false));
+			const href = link.getAttribute('href');
+			const destino = href && href.startsWith('#') && href.length > 1
+				? document.querySelector(href)
+				: null;
+
+			link.addEventListener('click', event => {
+				const veniaAbierto = isMenuOpen();
+				setMenu(false);
+
+				if (!veniaAbierto || !destino) return;
+
+				event.preventDefault();
+				window.setTimeout(() => {
+					destino.scrollIntoView({ behavior: 'smooth', block: 'start' });
+					history.replaceState(null, '', href);
+				}, ESPERA_CIERRE);
+			});
 		});
 
 		// Cierra con Escape y devuelve el foco al botón

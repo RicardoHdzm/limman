@@ -943,7 +943,12 @@ p{ font-size:var(--step-0); line-height:1.7; color:var(--ink-400); margin:0 0 1r
 
 /* --- Tablet / móvil: menú colapsado --- */
 @media only screen and (max-width:1024px){
-	.navbar{ background:var(--navy-700); }
+	/* El navbar NO lleva fondo fijo aquí a propósito. Con navy opaco desde
+	   el arranque quedaba invisible sobre el hero (1.4:1 de contraste) y
+	   luego "saltaba" al entrar el contenido claro. Dejándolo transparente
+	   arriba, el paso a navy lo hace la transición de .scrolled y se ve
+	   como un fundido. El logo y la hamburguesa son blancos: sobre el hero
+	   casi negro se leen perfectamente. */
 	.nav-toggle{ display:flex; }
 
 	/* Holgura real bajo el navbar: con padding-top igual a su altura exacta,
