@@ -205,9 +205,12 @@ p{ font-size:var(--step-0); line-height:1.7; color:var(--ink-400); margin:0 0 1r
 	transition:background-color .25s ease, box-shadow .25s ease;
 }
 
+/* El hilo inset le define el borde inferior. Sin él, sobre el hero (que
+   arriba se compone en rgb(7,9,9)) el navy da 1.4:1 y el navbar se lee
+   como parte del fondo. Va inset para no alterar la altura de 80px. */
 .navbar.scrolled{
 	background-color:var(--navy-700);
-	box-shadow:0 2px 12px rgba(6,22,48,.18);
+	box-shadow:inset 0 -1px 0 rgba(255,255,255,.25), 0 2px 12px rgba(6,22,48,.18);
 }
 
 .brand-logo{ height:52px; transition:transform .3s ease; }
@@ -938,7 +941,12 @@ p{ font-size:var(--step-0); line-height:1.7; color:var(--ink-400); margin:0 0 1r
 
 /* --- Tablet / móvil: menú colapsado --- */
 @media only screen and (max-width:1024px){
-	.navbar{ background:var(--navy-700); }
+	/* En móvil el navbar es opaco desde el inicio, así que necesita el
+	   hilo desde el arranque y no solo al scrollear. */
+	.navbar{
+		background:var(--navy-700);
+		box-shadow:inset 0 -1px 0 rgba(255,255,255,.25);
+	}
 	.nav-toggle{ display:flex; }
 
 	.nav-links{
