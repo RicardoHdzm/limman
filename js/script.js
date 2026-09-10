@@ -1,3 +1,10 @@
+/* Al refrescar, el navegador restaura la posición de scroll anterior.
+   En una página de una sola vista eso deja el hero a media altura y el
+   navbar fijo tapando el logo. Con 'manual' siempre se abre arriba.
+   Va fuera del DOMContentLoaded para que aplique antes de la restauración.
+   Los enlaces con ancla (#Servicios, #Contacto) siguen funcionando igual. */
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+
 document.addEventListener('DOMContentLoaded', () => {
 
 	const navbar = document.getElementById('navbar');

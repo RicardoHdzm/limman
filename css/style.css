@@ -302,7 +302,9 @@ p{ font-size:var(--step-0); line-height:1.7; color:var(--ink-400); margin:0 0 1r
 
 	overflow:hidden;
 	display:flex;
-	align-items:center;
+	/* "safe" evita que, si el contenido no cabe, el centrado lo desborde
+	   hacia arriba y overflow:hidden le corte la cabeza al logo. */
+	align-items:safe center;
 	justify-content:center;
 	text-align:center;
 	background-color:#000;
