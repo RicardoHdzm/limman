@@ -129,20 +129,26 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	/* ---------- Video del hero ----------
-	   El video solo se descarga en pantallas grandes y con animación permitida.
-	   En móvil, o con "reducir movimiento", basta el poster: son ~60 KB
-	   en lugar de ~2.6 MB. */
+	   Cada pantalla recibe su propio archivo: en escritorio el de 1080p
+	   (~4 MB), en móvil uno de 720p recortado a 12 s (~1 MB) para no
+	   gastarle los datos a quien entra desde el teléfono.
+	   Con "reducir movimiento" no se descarga nada: solo el poster. */
 
 	const heroVideo = document.querySelector('.hero video');
 	const wideScreen = window.matchMedia('(min-width: 768px)');
 
-	const shouldPlayHero = () => wideScreen.matches && !reduceMotion.matches;
+	const shouldPlayHero = () => !reduceMotion.matches;
 
 	const loadHeroVideo = () => {
 		if (!heroVideo || heroVideo.dataset.loaded) return;
 
-		[['video/webm', heroVideo.dataset.videoWebm],
-		 ['video/mp4', heroVideo.dataset.videoMp4]].forEach(([type, src]) => {
+		// En móvil una sola fuente: el WebM apenas ahorra 3% y no compensa
+		const fuentes = wideScreen.matches
+			? [['video/webm', heroVideo.dataset.videoWebm],
+			   ['video/mp4', heroVideo.dataset.videoMp4]]
+			: [['video/mp4', heroVideo.dataset.videoMovil || heroVideo.dataset.videoMp4]];
+
+		fuentes.forEach(([type, src]) => {
 			if (!src) return;
 			const source = document.createElement('source');
 			source.type = type;
